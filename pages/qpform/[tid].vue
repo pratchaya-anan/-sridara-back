@@ -3,7 +3,8 @@
     <v-row style="margin: 1rem">
       <v-col class="shadow-card">
         <h1
-          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white"
+        >
           ใบเสนอราคา/ยืนยันการสั่งซื้อ
         </h1>
         <v-row>
@@ -17,7 +18,8 @@
               type="text"
               id="base-input"
               v-model="customer_name"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -29,7 +31,8 @@
               type="text"
               id="base-input"
               v-model="tax_id"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -41,7 +44,8 @@
               type="text"
               id="base-input"
               v-model="contact_name"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
         </v-row>
 
@@ -56,7 +60,8 @@
               type="text"
               id="small-input"
               v-model="customer_address"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
         </v-row>
 
@@ -71,7 +76,8 @@
               type="text"
               id="small-input"
               v-model="customer_code"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -83,7 +89,8 @@
               :locale="locale"
               v-model:value="confirm_price_within"
               class="date-picker"
-              format="DD/MM/YYYY" />
+              format="DD/MM/YYYY"
+            />
           </v-col>
           <v-col>
             <label
@@ -95,7 +102,8 @@
               :locale="locale"
               v-model:value="delivery_date"
               class="date-picker"
-              format="DD/MM/YYYY" />
+              format="DD/MM/YYYY"
+            />
           </v-col>
         </v-row>
 
@@ -110,7 +118,8 @@
               type="text"
               id="small-input"
               v-model="sales_person"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -122,7 +131,8 @@
               type="text"
               id="base-input"
               v-model="sale_department"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
         </v-row>
 
@@ -137,7 +147,8 @@
               type="text"
               id="small-input"
               v-model="contact_tel"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -149,7 +160,8 @@
               type="text"
               id="small-input"
               v-model="contact_email"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
         </v-row>
       </v-col>
@@ -159,7 +171,8 @@
     <v-row style="margin: 1rem">
       <v-col class="shadow-card">
         <h1
-          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white"
+        >
           ใบเสนอราคา/ยืนยันการสั่งซื้อ
         </h1>
 
@@ -174,7 +187,8 @@
               type="text"
               id="small-input"
               v-model="product_code"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -186,7 +200,8 @@
               type="number"
               id="small-input"
               v-model.number="product_qty"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -198,7 +213,8 @@
               type="number"
               id="base-input"
               v-model.number="product_price_per_unit"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -210,7 +226,8 @@
               type="number"
               id="base-input"
               v-model.number="product_discount"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -221,7 +238,8 @@
             <select
               style="height: 55%"
               v-model="product_tax"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
               <option value="0%">0%</option>
               <option value="7%">7%</option>
               <option value="9%">9%</option>
@@ -241,7 +259,8 @@
               style="height: 33.6px"
               id="base-input"
               v-model="product_name"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col cols="2">
             <br />
@@ -260,10 +279,12 @@
         <div class="relative overflow-x-auto shadow">
           <section class="bg-gray-50 dark:bg-gray-900">
             <table
-              class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+            >
               <thead
                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
-                style="background-color: #81c784">
+                style="background-color: #81c784"
+              >
                 <tr>
                   <th scope="col" class="px-6 py-3">ลำดับ</th>
                   <th scope="col" class="px-6 py-3">รหัสสินค้า</th>
@@ -285,7 +306,8 @@
                 <tr
                   class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                   v-for="(item, index) in product_ls"
-                  :key="index">
+                  :key="index"
+                >
                   <td class="px-6 py-4">{{ index + 1 }}</td>
                   <td class="px-6 py-4">
                     {{ item.code }}
@@ -314,7 +336,7 @@
                       @click="productEdit(item)"
                       style="margin-top: 5px"
                       color="cyan-darken-3"
-                      >แกไข</v-btn
+                      >แก้ไข</v-btn
                     >
                     <v-btn
                       v-else
@@ -349,7 +371,8 @@
               type="number"
               id="small-input"
               v-model="price_validate_period"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col style="background-color: #f0f4c3"
             ><label
@@ -426,7 +449,8 @@
               disabled
               :value="formatter.format(Math.floor(sumAllProduct() * 100) / 100)"
               id="small-input"
-              class="block text-right w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block text-right w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
         </v-row>
         <v-row justify="end" style="margin-top: -1rem">
@@ -446,7 +470,8 @@
   <a-modal
     v-model:visible="prodEditDialog"
     width="50rem"
-    title="ฟอร์มแก้ไขข้อมูลสินค้า">
+    title="ฟอร์มแก้ไขข้อมูลสินค้า"
+  >
     <template #footer>
       <a-button key="back" @click="prodEditDialog = false">ยกเลิก</a-button>
       <a-button key="submit" type="primary" @click="prodEditConfirm"
@@ -465,7 +490,8 @@
           type="text"
           v-model="prod_edit_form.name"
           id="base-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -477,7 +503,8 @@
           type="number"
           v-model.number="prod_edit_form.qty"
           id="base-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -489,7 +516,8 @@
           type="number"
           v-model.number="prod_edit_form.discount"
           id="base-input"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
     </v-row>
   </a-modal>
@@ -627,6 +655,7 @@ export default defineComponent({
     },
     onAddProduct() {
       if (this.validateProductDetail()) {
+        // console.log("AddProduct");
         let x = this.product_qty * this.product_price_per_unit;
         if (this.product_tax === "7%") {
           this.product_amount = x + x * 0.07 - this.product_discount;
@@ -637,7 +666,7 @@ export default defineComponent({
         }
         const payload: any = {
           tour_id: this.tour_id,
-          customer_id: this.customer_code,
+          quo_id: this.customer_code,
           code: this.product_code,
           name: this.product_name,
           desc: "-",
@@ -648,6 +677,7 @@ export default defineComponent({
           tax: this.product_tax,
           amount: this.product_amount,
         };
+        // console.log(payload);
         create_data("product", payload).then((result) => {
           payload.id = result.id;
           this.product_ls.push(payload);

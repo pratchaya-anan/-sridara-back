@@ -18,12 +18,12 @@ export const api = axios.create({
 });
 
 export const create_data = async (collection: string, data: any) => {
-  try {
+  // try {
     const response = await api.post(collection, data);
     return response.data;
-  } catch (error: any) {
-    errorNotification(error.message);
-  }
+  // } catch (error: any) {
+  //   errorNotification(error.message);
+  // }
 };
 
 export const read_all_data = async (collection: string) => {
@@ -46,12 +46,12 @@ export const read_one_data = async (collection: string, id: string) => {
 };
 
 export const delete_data = async (collection: string, id?: string) => {
-  try {
+  // try {
     const response = await api.delete(`${collection}/${id}`);
     return response.data;
-  } catch (error: any) {
-    errorNotification(error.message);
-  }
+  // } catch (error: any) {
+  //   errorNotification(error.message);
+  // }
 };
 
 export const update_data = async (

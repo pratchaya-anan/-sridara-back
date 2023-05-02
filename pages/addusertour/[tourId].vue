@@ -4,12 +4,14 @@
       <v-col class="shadow-card">
         <h1
           v-if="tour_detail"
-          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white"
+        >
           ข้อมูลลูกทัวร์ | {{ tour_detail.name }}
         </h1>
         <h1
           v-else
-          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+          class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white"
+        >
           Loading...
         </h1>
         <v-row>
@@ -23,7 +25,8 @@
               type="text"
               id="base-input"
               v-model="surname_thai"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
 
           <v-col>
@@ -36,32 +39,35 @@
               type="text"
               id="small-input"
               v-model="lastname_thai"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Surname</label
+              >ชื่อ (ภาษาอังกฤษ)</label
             >
             <input
               type="text"
               id="base-input"
               v-model="surname_eng"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
 
           <v-col>
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Lastname</label
+              >นามสกุล (ภาษาอังกฤษ)</label
             >
             <input
               type="text"
               id="small-input"
               v-model="lastname_eng"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -73,7 +79,8 @@
               type="text"
               id="base-input"
               v-model="nationality"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
 
           <v-col>
@@ -85,7 +92,8 @@
             <select
               style="height: 55%"
               v-model="gender"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
               <option value="ชาย">ชาย</option>
               <option value="หญิง">หญิง</option>
               <option value="อื่นๆ">อื่นๆ</option>
@@ -104,7 +112,8 @@
               type="text"
               id="small-input"
               v-model="id_card"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -116,7 +125,8 @@
               :locale="locale"
               v-model:value="dob"
               class="date-picker"
-              format="DD/MM/YYYY" />
+              format="DD/MM/YYYY"
+            />
           </v-col>
           <v-col>
             <label
@@ -128,7 +138,8 @@
               type="text"
               id="small-input"
               v-model="telephone_number"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
@@ -139,7 +150,8 @@
             <select
               style="height: 55%"
               v-model="bed_type"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
               <option value="เดี่ยว">เตียงเดี่ยว</option>
               <option value="คู่">เตียงคู่</option>
             </select>
@@ -149,31 +161,36 @@
           <v-col>
             <label
               for="base-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
               หมายเลขพาสปอร์ต</label
             >
             <input
               type="text"
               id="base-input"
               v-model="passport"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
               for="base-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
               ตรวจลงตราเลขที่</label
             >
             <input
               type="text"
               id="small-input"
               v-model="stamp_number"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col>
             <label
               for="base-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
               วันที่ออก - วันที่หมด</label
             >
             <a-range-picker
@@ -185,7 +202,8 @@
                 background-color: #f9fafb;
                 border-radius: 0.4rem;
                 width: 100%;
-              " />
+              "
+            />
           </v-col>
         </v-row>
         <v-row>
@@ -199,7 +217,8 @@
               type="text"
               id="small-input"
               v-model="address"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col cols="3">
             <label
@@ -211,7 +230,8 @@
               type="text"
               id="small-input"
               v-model="vip_user"
-              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
           </v-col>
           <v-col cols="2">
             <br />
@@ -233,23 +253,25 @@
             border-radius: 0.5rem;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
               rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-          ">
+          "
+        >
           <section class="bg-gray-50 dark:bg-gray-900">
             <table
-              class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+            >
               <thead
                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
-                style="background-color: #81c784">
+                style="background-color: #81c784"
+              >
                 <tr>
                   <th scope="col" class="px-6 py-3">ลำดับ</th>
                   <th scope="col" class="px-6 py-3">ชื่อ-นามสกุลภาษาไทย</th>
                   <th scope="col" class="px-6 py-3">หมายเลขบัตรประชาชน</th>
-                  <th scope="col" class="px-6 py-3">ชื่อ-นามสกุลภาษาอังกฤษ</th>
                   <th scope="col" class="px-6 py-3">หมายเลขพาสปอร์ต</th>
                   <th scope="col" class="px-6 py-3">วันที่ออก</th>
                   <th scope="col" class="px-6 py-3">วันที่หมด</th>
                   <th scope="col" class="px-6 py-3">ว/ด/ป เกิด</th>
-                  <th scope="col" class="px-6 py-3">สัญชาต</th>
+                  <th scope="col" class="px-6 py-3">สัญชาติ</th>
                   <th scope="col" class="px-6 py-3">เพศ</th>
                   <th scope="col" class="px-6 py-3">ประเภทเตียง</th>
                   <th scope="col" class="px-6 py-3">ตรวจลงตราเลขที</th>
@@ -265,17 +287,17 @@
                   class="table-row-hover"
                   v-for="(item, index) in members_ls"
                   @click="deleteAlert(item.id, item.thai_name)"
-                  :key="index">
+                  :key="index"
+                >
                   <td class="px-6 py-4">{{ index + 1 }}</td>
                   <td class="px-6 py-4">
-                    {{ item.thai_name }}
+                    <div>{{ item.thai_name }}</div>
+                    <div style="font-size: 12px">{{ item.eng_name }}</div>
                   </td>
                   <td class="px-6 py-4">
                     {{ item.national_id }}
                   </td>
-                  <td class="px-6 py-4">
-                    {{ item.eng_name }}
-                  </td>
+
                   <td class="px-6 py-4">
                     {{ item.passport_no }}
                   </td>

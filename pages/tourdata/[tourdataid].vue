@@ -1,14 +1,16 @@
 <template>
   <section
     class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5"
-    style="margin-top: 1rem">
+    style="margin-top: 1rem"
+  >
     <v-card color="light-blue-darken-1" v-if="loading">
       <v-card-text>
         กำลังโหลดข้อมูล กรุณารอ...
         <v-progress-circular
           style="margin-left: 1rem; margin-bottom: 0.3rem"
           indeterminate
-          color="white"></v-progress-circular>
+          color="white"
+        ></v-progress-circular>
       </v-card-text>
     </v-card>
     <div v-else>
@@ -19,7 +21,8 @@
             @click="$router.push(`/edittour/${tour_data.id}`)"
             style="position: absolute; right: 0.2rem; top: 4.5rem; z-index: 999"
             color="blue-accent-3"
-            v-bind="props">
+            v-bind="props"
+          >
             <v-icon> mdi-text-box-edit </v-icon>
           </v-btn>
         </template>
@@ -32,7 +35,8 @@
             @click="tour_comment_dialog = true"
             style="position: absolute; right: 0.2rem; top: 8rem; z-index: 999"
             color="deep-purple-accent-4"
-            v-bind="props">
+            v-bind="props"
+          >
             <v-icon> mdi-comment-text </v-icon>
           </v-btn>
         </template>
@@ -50,7 +54,8 @@
               z-index: 999;
             "
             color="purple-accent-4"
-            v-bind="props">
+            v-bind="props"
+          >
             <v-icon> mdi-sticker-text </v-icon>
           </v-btn>
         </template>
@@ -60,7 +65,8 @@
         <table
           v-if="tour_data"
           class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-          style="background-color: #e1f5fe">
+          style="background-color: #e1f5fe"
+        >
           <tr>
             <td colspan="5" class="pb-1 pt-2 px-3">
               <h3>ชื่อทริปทัวร์ : {{ tour_data.name }}</h3>
@@ -94,7 +100,8 @@
           <tr
             style="background-color: #fffde7"
             v-for="(item, index) in hotels_ls"
-            :key="index">
+            :key="index"
+          >
             <td colspan="3" class="py-1 px-3">
               <h3>ชื่อโรงแรม : {{ item.name }}</h3>
             </td>
@@ -133,17 +140,18 @@
             members_ls.length >= 10
               ? { 'max-height': '400px', 'margin-bottom': '2.5rem' }
               : { 'max-height': '400px' }
-          ">
+          "
+        >
           <thead
             class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
-            style="background-color: #0277bd; color: white">
+            style="background-color: #0277bd; color: white"
+          >
             <tr>
               <th scope="col" class="px-6 py-3">ลำดับ</th>
               <th scope="col" class="px-6 py-3">ชื่อ-นามสกุลภาษาไทย</th>
               <th scope="col" class="px-6 py-3">หมายเลขบัตรประชาชน</th>
-              <th scope="col" class="px-6 py-3">ชื่อ-นามสกุลภาษาอังกฤษ</th>
               <th scope="col" class="px-6 py-3">หมายเลขพาสปอร์ต</th>
-              <th scope="col" class="px-6 py-3">สัญชาต</th>
+              <th scope="col" class="px-6 py-3">สัญชาติ</th>
               <th scope="col" class="px-6 py-3">เพศ</th>
               <th scope="col" class="px-6 py-3">ประเภทเตียง</th>
               <th scope="col" class="px-6 py-3">เพิ่มเติม</th>
@@ -160,16 +168,15 @@
             <tr
               class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
               v-for="(item, index) in members_ls"
-              :key="index">
+              :key="index"
+            >
               <td class="px-6 py-4" style="font-size: 13px">{{ index + 1 }}</td>
-              <td class="px-6 py-4" style="font-size: 13px">
-                {{ item.thai_name }}
+              <td class="px-6 py-4">
+                <div style="font-size: 13px">{{ item.thai_name }}</div>
+                <div style="font-size: 12px">{{ item.eng_name }}</div>
               </td>
               <td class="px-6 py-4" style="font-size: 13px">
                 {{ item.national_id }}
-              </td>
-              <td class="px-6 py-4" style="font-size: 13px">
-                {{ item.eng_name }}
               </td>
               <td class="px-6 py-4" style="font-size: 13px">
                 {{ item.passport_no }}
@@ -197,7 +204,8 @@
 
   <a-modal
     v-model:visible="member_detail_dialog"
-    :title="`รายละเอียดลูกทัวร์ | ${selected_member.thai_name}`">
+    :title="`รายละเอียดลูกทัวร์ | ${selected_member.thai_name}`"
+  >
     <template #footer>
       <a-row justify="space-between">
         <a-col>
@@ -205,7 +213,8 @@
             <a-input
               v-model:value="member_comment"
               placeholder="ข้อความ"
-              style="width: 30vmin; text-align: left" />
+              style="width: 30vmin; text-align: left"
+            />
             <a-button type="primary" @click="handleUpdateMemberComment"
               >คอมเมนต์</a-button
             >
@@ -239,7 +248,8 @@
       margin: 0;
       position: fixed;
       bottom: 0;
-    ">
+    "
+  >
     <v-col cols="2">
       <v-row>
         <v-col style="text-align: left"
@@ -312,7 +322,8 @@
     title="Contact Sale"
     @click="tools = true"
     style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
-    class="fixed z-90 bottom-5 right-5 bg-blue-600 w-15 h-15 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">
+    class="fixed z-90 bottom-5 right-5 bg-blue-600 w-15 h-15 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300"
+  >
     <Icon name="material-symbols:keyboard-double-arrow-up"></Icon>
   </button>
 
@@ -328,7 +339,8 @@
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ชื่อลูกค้า</th>
             <th scope="col" class="px-6 py-3">ชื่อผู้เสนอขาย</th>
@@ -341,10 +353,12 @@
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in quo_ls"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.customer_name }}
             </th>
             <td class="px-6 py-4">{{ item.sales_person }}</td>
@@ -393,7 +407,8 @@
                 ok-text="ยืนยัน"
                 cancel-text="ยกเลิก"
                 @confirm="onDeleteQuotation(item.id)"
-                @cancel="cancel">
+                @cancel="cancel"
+              >
                 <a
                   href="#"
                   class="font-medium text-red-600 dark:text-red-500 hover:underline"
@@ -410,7 +425,8 @@
   <a-modal
     v-model:visible="list_cash"
     width="65rem"
-    title="รายการใบเบิกค่าใช้จ่าย">
+    title="รายการใบเบิกค่าใช้จ่าย"
+  >
     <template #footer>
       <a-button
         type="primary"
@@ -424,7 +440,8 @@
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ชื่อผู้เบิก</th>
             <th scope="col" class="px-6 py-3">วันที่เบิก</th>
@@ -437,10 +454,12 @@
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in estimate_ls"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.withdrawer_name }}
             </th>
             <td class="px-6 py-4">{{ item.date }}</td>
@@ -464,7 +483,8 @@
                 ok-text="ยืนยัน"
                 cancel-text="ยกเลิก"
                 @confirm="onDeleteEstimate(item.id)"
-                @cancel="cancel">
+                @cancel="cancel"
+              >
                 <a
                   href="#"
                   class="font-medium text-red-600 dark:text-red-500 hover:underline"
@@ -500,7 +520,8 @@
           type="text"
           id="base-input"
           v-model="billing.billing_note_no"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -513,7 +534,8 @@
           style="z-index: 999"
           v-model:value="billing.billing_note_date"
           class="date-picker"
-          format="DD/MM/YYYY" />
+          format="DD/MM/YYYY"
+        />
       </v-col>
       <v-col>
         <label
@@ -525,7 +547,8 @@
           type="text"
           id="base-input"
           v-model="billing.billing_note_fax"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
     </v-row>
   </a-modal>
@@ -533,7 +556,8 @@
   <a-modal
     v-model:visible="dialog2"
     width="65rem"
-    title="ฟอร์มสร้างใบกำกับภาษี/ใบส่งของ">
+    title="ฟอร์มสร้างใบกำกับภาษี/ใบส่งของ"
+  >
     <template #footer>
       <a-button key="back" @click="dialog2 = false">ยกเลิก</a-button>
       <a-button
@@ -555,7 +579,8 @@
           type="text"
           id="base-input"
           v-model="tax.tax_no"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -568,7 +593,8 @@
           style="z-index: 999"
           v-model:value="tax.tax_date"
           class="date-picker"
-          format="DD/MM/YYYY" />
+          format="DD/MM/YYYY"
+        />
       </v-col>
       <v-col>
         <label
@@ -581,7 +607,8 @@
           style="z-index: 999"
           v-model:value="tax.tax_pay_date"
           class="date-picker"
-          format="DD/MM/YYYY" />
+          format="DD/MM/YYYY"
+        />
       </v-col>
       <v-col>
         <label
@@ -593,7 +620,8 @@
           type="text"
           id="base-input"
           v-model="tax.tax_branch"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
     </v-row>
   </a-modal>
@@ -601,7 +629,8 @@
   <a-modal
     v-model:visible="create_clear_dialog"
     width="90rem"
-    title="ออกใบเคียร์ประมาณการเงินสดย่อย">
+    title="ออกใบเคียร์ประมาณการเงินสดย่อย"
+  >
     <template #footer>
       <a-row justify="space-between">
         <a-col>
@@ -644,19 +673,22 @@
           type="text"
           id="base-input"
           v-model="clear.person_clear"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
           for="base-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >
           ฝ่าย/แผนก</label
         >
         <input
           type="text"
           id="base-input"
           v-model="clear.department"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -668,7 +700,8 @@
           type="text"
           id="base-input"
           v-model="clear.pefer_no_example_pay"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -680,7 +713,8 @@
           type="text"
           id="base-input"
           v-model="clear.tour_desc"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -692,7 +726,8 @@
           type="text"
           id="base-input"
           v-model="clear.approve_user"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
     </v-row>
     <a-divider> รายการที่ขอเบิก </a-divider>
@@ -718,7 +753,8 @@
           type="text"
           id="base-input"
           v-model="clear_desc"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -730,7 +766,8 @@
           type="text"
           id="base-input"
           v-model="clear_no"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -742,7 +779,8 @@
           type="text"
           id="base-input"
           v-model="clear_tax_id"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -754,7 +792,8 @@
           type="number"
           id="base-input"
           v-model.number="clear_total"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
       </v-col>
       <v-col>
         <label
@@ -765,11 +804,13 @@
         <select
           style="height: 33.6px"
           v-model="clear_of"
-          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
           <option
             v-for="(item, index) in est_de_ls"
             :key="index"
-            :value="item.id">
+            :value="item.id"
+          >
             {{ item.desc }}
           </option>
         </select>
@@ -783,10 +824,12 @@
     >
     <div class="relative overflow-x shadow-md sm:rounded-lg mt-5">
       <table
-        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400">
+        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400"
+      >
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">วันที่ใบเสร็จ</th>
             <th scope="col" class="px-6 py-3">รายละเอียดค่าใช้จ่าย</th>
@@ -798,7 +841,8 @@
         <tbody v-for="(item, index) in est_de_ls">
           <tr
             class="bg-gray-100 border-b dark:bg-gray-800 dark:border-gray-700"
-            :key="index">
+            :key="index"
+          >
             <th class="px-6 py-4 w-40">
               หัวข้ออ้างอิง<br />ไม่แสดงในใบเคลียร์
             </th>
@@ -815,7 +859,8 @@
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in item.clearance"
-            :key="index">
+            :key="index"
+          >
             <th class="px-6 py-4">{{ item.clear_date }}</th>
             <td class="px-6 py-4">{{ item.clear_desc }}</td>
             <td class="px-6 py-4">{{ item.clear_no }}</td>
@@ -852,24 +897,28 @@
     <a-divider> รายการร้านอาหาร </a-divider>
     <div class="relative overflow-x shadow-md sm:rounded-lg">
       <table
-        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400">
+        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400"
+      >
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ร้าน</th>
             <th scope="col" class="px-6 py-3">คอมเมนต์</th>
-            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนท์</th>
+            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนต์</th>
           </tr>
         </thead>
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in resturaunt_ls.restaurants"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.name }}
             </th>
             <td class="px-6">{{ item.comment }}</td>
@@ -878,7 +927,7 @@
                 type="dashed"
                 @click="openCommentDialog(item.name)"
                 style="margin-right: 0.5rem"
-                >คอมเมนท์</a-button
+                >คอมเมนต์</a-button
               ><a-button
                 type="danger"
                 @click="handleDeleteResturaunt(item.name)"
@@ -890,7 +939,7 @@
       </table>
     </div>
   </a-modal>
-  <a-modal v-model:visible="comment_dialog" title="เพิ่มคอมเม้นต์">
+  <a-modal v-model:visible="comment_dialog" title="เพิ่มคอมเมนต์">
     <template #footer>
       <a-button key="back" @click="comment_dialog = false">ปิด</a-button>
     </template>
@@ -911,7 +960,8 @@
   <a-modal
     v-model:visible="attraction_dialog"
     width="58rem"
-    title="สถานที่ท่องเที่ยว">
+    title="สถานที่ท่องเที่ยว"
+  >
     <template #footer>
       <a-button key="back" @click="attraction_dialog = false">ปิด</a-button>
     </template>
@@ -930,24 +980,28 @@
     <a-divider> รายการสถานที่ท่องเที่ยว </a-divider>
     <div class="relative overflow-x shadow-md sm:rounded-lg">
       <table
-        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400">
+        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400"
+      >
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ชื่อ</th>
             <th scope="col" class="px-6 py-3">คอมเมนต์</th>
-            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนท์</th>
+            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนต์</th>
           </tr>
         </thead>
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in attraction_ls.attractions"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.name }}
             </th>
             <td class="px-6">{{ item.comment }}</td>
@@ -956,7 +1010,7 @@
                 type="dashed"
                 style="margin-right: 0.5rem"
                 @click="openAttractionCommentDialog(item.name)"
-                >คอมเมนท์</a-button
+                >คอมเมนต์</a-button
               >
               <a-button type="danger" @click="handleDeleteAttraction(item.name)"
                 >ลบ</a-button
@@ -967,7 +1021,7 @@
       </table>
     </div>
   </a-modal>
-  <a-modal v-model:visible="attraction_comment_dialog" title="เพิ่มคอมเม้นต์">
+  <a-modal v-model:visible="attraction_comment_dialog" title="เพิ่มคอมเมนต์">
     <template #footer>
       <a-button key="back" @click="attraction_comment_dialog = false"
         >ปิด</a-button
@@ -1006,24 +1060,28 @@
     <a-divider> รายการเส้นทาง </a-divider>
     <div class="relative overflow-x shadow-md sm:rounded-lg">
       <table
-        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400">
+        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400"
+      >
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ชื่อ</th>
             <th scope="col" class="px-6 py-3">คอมเมนต์</th>
-            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนท์</th>
+            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนต์</th>
           </tr>
         </thead>
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in direction_ls.directions"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.name }}
             </th>
             <td class="px-6">{{ item.comment }}</td>
@@ -1032,7 +1090,7 @@
                 type="dashed"
                 style="margin-right: 0.5rem"
                 @click="openDirectionsCommentDialog(item.name)"
-                >คอมเมนท์</a-button
+                >คอมเมนต์</a-button
               >
               <a-button type="danger" @click="handleDeleteDirections(item.name)"
                 >ลบ</a-button
@@ -1044,7 +1102,7 @@
     </div>
   </a-modal>
 
-  <a-modal v-model:visible="direction_comment_dialog" title="เพิ่มคอมเม้นต์">
+  <a-modal v-model:visible="direction_comment_dialog" title="เพิ่มคอมเมนต์">
     <template #footer>
       <a-button key="back" @click="direction_comment_dialog = false"
         >ปิด</a-button
@@ -1064,7 +1122,7 @@
     >
   </a-modal>
 
-  <a-modal v-model:visible="tour_comment_dialog" title="เพิ่มคอมเม้นต์">
+  <a-modal v-model:visible="tour_comment_dialog" title="เพิ่มคอมเมนต์">
     <template #footer>
       <a-button key="back" @click="tour_comment_dialog = false">ปิด</a-button>
     </template>
@@ -1085,30 +1143,35 @@
   <a-modal
     v-model:visible="hotel_comment_dialog"
     width="58rem"
-    title="รายการโรงแรม">
+    title="รายการโรงแรม"
+  >
     <template #footer>
       <a-button key="back" @click="hotel_comment_dialog = false">ปิด</a-button>
     </template>
     <div class="relative overflow-x shadow-md sm:rounded-lg">
       <table
-        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400">
+        class="w-full text-sm overflow-scroll table-auto text-left text-gray-500 dark:text-gray-400"
+      >
         <thead
           class="text-xs uppercase bg-green-800 dark:bg-gray-700"
-          style="color: white">
+          style="color: white"
+        >
           <tr>
             <th scope="col" class="px-6 py-3">ชื่อ</th>
             <th scope="col" class="px-6 py-3">คอมเมนต์</th>
-            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนท์</th>
+            <th scope="col" class="px-6 py-3">เพิ่มคอมเมนต์</th>
           </tr>
         </thead>
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             v-for="(item, index) in hotels_ls"
-            :key="index">
+            :key="index"
+          >
             <th
               scope="row"
-              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              class="px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
               {{ item.name }}
             </th>
             <td class="px-6">{{ item.comments }}</td>
@@ -1117,7 +1180,7 @@
                 type="dashed"
                 style="margin-right: 0.5rem"
                 @click="openHotelCommentDialog(item.id)"
-                >คอมเมนท์</a-button
+                >คอมเมนต์</a-button
               >
             </td>
           </tr>
@@ -1126,7 +1189,7 @@
     </div>
   </a-modal>
 
-  <a-modal v-model:visible="hotel_select_dialog" title="เพิ่มคอมเม้นต์">
+  <a-modal v-model:visible="hotel_select_dialog" title="เพิ่มคอมเมนต์">
     <template #footer>
       <a-button key="back" @click="hotel_select_dialog = false">ปิด</a-button>
     </template>
@@ -1149,42 +1212,51 @@
       v-model="tools"
       location="bottom"
       temporary
-      style="height: 23rem">
+      style="height: 23rem"
+    >
       <v-list density="compact" nav>
         <v-list-item
           title="ลบทัวร์"
           style="color: red"
           @click="handleDelete(tour_data.name)"
           value="1"
-          href="/"></v-list-item>
+          href="/"
+        ></v-list-item>
         <v-list-item
           title="จัดการร้านอาหาร"
           @click="resturaunt_dialog = true"
-          value="2"></v-list-item>
+          value="2"
+        ></v-list-item>
         <v-list-item
           title="จัดการสถานที่ท่องเที่ยว"
           @click="attraction_dialog = true"
-          value="3"></v-list-item>
+          value="3"
+        ></v-list-item>
         <v-list-item
           title="จัดการเส้นทาง"
           @click="direction_dialog = true"
-          value="4"></v-list-item>
+          value="4"
+        ></v-list-item>
         <v-list-item
           title="คอมเมนต์โรงแรม"
           @click="hotel_comment_dialog = true"
-          value="8"></v-list-item>
+          value="8"
+        ></v-list-item>
         <v-list-item
           title="จัดการใบเบิกค่าใช้จ่าย"
           @click="list_cash = true"
-          value="5"></v-list-item>
+          value="5"
+        ></v-list-item>
         <v-list-item
           title="จัดการใบเสนอราคา"
           @click="list_quo = true"
-          value="6"></v-list-item>
+          value="6"
+        ></v-list-item>
         <v-list-item
           title="จัดการข้อมูลลูกทัวร์"
           @click="$router.push(`/addusertour/${tour_id}`)"
-          value="7"></v-list-item>
+          value="7"
+        ></v-list-item>
       </v-list>
     </v-navigation-drawer>
   </v-layout>
@@ -1357,11 +1429,12 @@ export default {
         preConfirm: () => {
           return delete_data("tour", this.tour_id)
             .then(() => {
-              delete_data(`hotel?tid=${this.tour_id}`).then(() => {
-                delete_data(`member?tid=${this.tour_id}`).then(() => {
-                  this.$router.push("/");
-                });
-              });
+              this.$router.push("/tour_ls");
+              // delete_data(`hotel?tid=${this.tour_id}`).then(() => {
+              //   delete_data(`member?tid=${this.tour_id}`).then(() => {
+              //     this.$router.push("/tour_ls");
+              //   });
+              // });
             })
             .catch((error) => {
               Swal.showValidationMessage(`Request failed: ${error}`);

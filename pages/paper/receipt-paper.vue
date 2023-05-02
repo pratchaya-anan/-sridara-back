@@ -1,6 +1,7 @@
 <template>
   <div
-    style="display: flex; background-color: rgb(225, 225, 241); z-index: -111">
+    style="display: flex; background-color: rgb(225, 225, 241); z-index: -111"
+  >
     <div class="page" v-if="onLoad">
       <v-container>
         <v-row style="margin: 2px">
@@ -84,7 +85,8 @@
         </v-row>
 
         <v-row
-          style="padding: 1px; margin: auto; border-bottom: 1px solid black">
+          style="padding: 1px; margin: auto; border-bottom: 1px solid black"
+        >
           <v-col style="padding: 1px; height: 400px">
             <v-table density="compact" height="auto">
               <thead style="font-weight: bold; font-size: 14px">
@@ -92,7 +94,8 @@
                   style="
                     border-top: 1px solid black;
                     border-bottom: 1px solid black;
-                  ">
+                  "
+                >
                   <td class="text-center" style="font-size: xx-small">ลำดับ</td>
                   <td class="text-center" style="font-size: xx-small">
                     วันที่
@@ -161,7 +164,7 @@
                 <td colspan="2" style="font-weight: bold">
                   หักภาษี ณ ที่จ่าย :
                 </td>
-                <td colspan="2">{{ ob.receipt_tax }}</td>
+                <td colspan="2">{{ tax_wtf }} บาท ({{ ob.receipt_tax }})</td>
               </tr>
               <tr style="height: 30px">
                 <td colspan="2" style="font-weight: bold">
@@ -189,7 +192,8 @@
               <tr style="height: 20px">
                 <td
                   colspan="2"
-                  style="font-weight: bold; border-bottom: 1px solid black">
+                  style="font-weight: bold; border-bottom: 1px solid black"
+                >
                   &nbsp;
                 </td>
               </tr>
@@ -284,15 +288,15 @@ export default defineComponent({
     );
 
     if (this.ob.receipt_tax == "3%") {
-      this.last_total += this.last_total * 0.03;
+      this.tax_wtf += this.last_total * 0.03;
     } else if (this.ob.receipt_tax == "5%") {
-      this.last_total += this.last_total * 0.05;
+      this.tax_wtf += this.last_total * 0.05;
     } else if (this.ob.receipt_tax == "1%") {
-      this.last_total += this.last_total * 0.01;
+      this.tax_wtf += this.last_total * 0.01;
     } else if (this.ob.receipt_tax == "4%") {
-      this.last_total += this.last_total * 0.04;
+      this.tax_wtf += this.last_total * 0.04;
     } else if (this.ob.receipt_tax == "7%") {
-      this.last_total += this.last_total * 0.07;
+      this.tax_wtf += this.last_total * 0.07;
     }
     const q = await read_all_data(
       `quotations?tour_id=${obj.tax_invoice[0].tour_id}`
@@ -306,6 +310,7 @@ export default defineComponent({
       quo: {} as any,
       ob: {} as any,
       last_total: 0,
+      tax_wtf: 0,
     };
   },
   methods: {
